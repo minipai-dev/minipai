@@ -1,0 +1,68 @@
+# Ignore all dotfiles/dotdirs by default, then explicitly allow-list the
+# ones that must be tracked. Prevents silently losing new dotfile categories.
+.*
+!.gitignore
+!.gitattributes
+!.editorconfig
+!.github/
+!.github/**
+
+# ---- 私人运营文档（不进公开仓库） ----
+# 采购单号、供应商报价、成本明细属于运营数据，不是开源资产。
+# BOM 的公开版本（不含供应商与议价信息）另行整理进 hardware/。
+docs/procurement.md
+docs/private/
+**/*.private.md
+rfq/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ---- RL / training artifacts ----
+# Checkpoints and logs are large and regenerable — keep them out of git.
+runs/
+logs/
+wandb/
+outputs/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+tensorboard/
+
+# Exported policies ARE tracked (release artifacts, small, needed for
+# reproduction). Only ignore scratch exports.
+scratch/*.onnx
+
+# ---- ServoBench raw data ----
+# Raw CSVs are intentionally TRACKED — the Benchmark's credibility depends on
+# open raw data. Only ignore scratch/aborted runs.
+servobench/data/scratch/
+servobench/data/*.tmp
+
+# ---- Firmware / embedded ----
+build/
+cmake-build-*/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+
+# ---- CAD / mechanical ----
+# Source CAD (STEP, FCStd, f3d) and STL ARE tracked.
+# Ignore solver/backup and slicer output only.
+*.FCStd1
+*.f3d.bak
+*~
+gcode/
+
+# ---- OS / editor ----
+Thumbs.db
+*.swp
+*.swo
