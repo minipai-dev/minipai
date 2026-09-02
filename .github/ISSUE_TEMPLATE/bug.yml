@@ -1,0 +1,26 @@
+name: Bug / 跑不通
+description: 装不上、跑不起来、结果不对
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 你执行了什么，期望什么，实际什么
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 环境
+      placeholder: |
+        OS：macOS 14.5 / Ubuntu 22.04
+        Python：3.11
+        是否有真机：无（仅仿真）
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: 完整报错
+      render: shell

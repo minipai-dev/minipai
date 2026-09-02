@@ -1,0 +1,45 @@
+name: 提交舵机测试数据
+description: 按 ServoBench 协议测试后提交数据
+title: "[ServoBench] <品牌 型号>"
+labels: ["servobench", "data"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: 舵机型号
+      placeholder: Feetech STS3032
+    validations:
+      required: true
+  - type: input
+    id: price
+    attributes:
+      label: 采购单价（¥）与渠道
+      placeholder: 98 / 淘宝
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: 测试条件
+      description: 电压、环境温度、负载、采样率、固件版本
+      placeholder: |
+        供电电压：7.4 V
+        环境温度：24 °C
+        负载：无
+        采样率：1 kHz
+    validations:
+      required: true
+  - type: input
+    id: protocol
+    attributes:
+      label: 协议版本
+      description: servobench/protocol.md 的 git tag 或 commit
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: 原始数据
+      description: 拖入 CSV 文件，或给出 PR 链接。只有图表不接受。
+    validations:
+      required: true
