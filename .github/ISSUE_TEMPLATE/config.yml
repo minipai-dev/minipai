@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 提问 / 讨论
+    url: https://github.com/minipai-dev/minipai/discussions
+    about: 使用问题和方向讨论请走 Discussions
+  - name: 🙋 想成为核心 Contributor
+    url: https://github.com/minipai-dev/minipai/blob/main/docs/contributing/roles.md
+    about: Mechanical / RL-Locomotion 两个方向正在招募
